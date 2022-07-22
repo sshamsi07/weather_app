@@ -1,0 +1,42 @@
+
+.ui-segments{
+    width:900px;
+    background-color:#eef6fb;
+    border-radius: 10px;
+    border: 5px solid white;
+
+
+}
+
+
+.today-center-aligned-segment{
+    width:890px;
+    height:400px;
+    size: auto;
+    background-color:#eef6fb;
+    border-bottom-left-radius: 10px;
+}
+
+.ui-next-segment{
+    height:252px;
+    background-color:#eef6fb;
+    border-top: 1px solid white;
+    border-left:2px solid white;
+    border-right:2px solid white;
+}
+
+#current-icon{
+    font-size:7rem;
+
+}
+
+.current-weather{
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 60px;
+    font-size: 50px;
+}
+.item{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    /*font-size: 100px;*/
+}
