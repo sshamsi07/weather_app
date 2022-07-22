@@ -32,7 +32,6 @@ class CurrentWeather extends React.Component{
     handle_current_temp(current_weather_data){
         const temp = current_weather_data["data"]["main"]["temp"]
         this.setState({current_temp: temp})
-        console.log( current_weather_data["data"]["weather"][0]["main"])
         const weather = current_weather_data["data"]["weather"][0]["main"]
         this.setState({current_weather_type: weather})
 
@@ -101,8 +100,8 @@ class CurrentWeather extends React.Component{
         this.setState({selected_city:city_name})
         let latitude = places_with_coordinates[city_name]["lat"]
         let longitude = places_with_coordinates[city_name]["lon"]
-        console.log(latitude, longitude)
-        const current_weather_request = axios.get( `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=dba8fde0096dcdc61ab12bcb7b9c98db&units=metric`, {
+
+        const current_weather_request = axios.get( `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=dba8fde0096dcdc61ab12bcb7b9c98db&units=metric`, {
                 headers: {
                     'Content-Type': 'application/json',
                     Accept: 'application/json',
@@ -110,7 +109,7 @@ class CurrentWeather extends React.Component{
             },
         )
         // forecast request
-        const forecast_weather_request  = axios.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=dba8fde0096dcdc61ab12bcb7b9c98db&units=metric`,
+        const forecast_weather_request  = axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=dba8fde0096dcdc61ab12bcb7b9c98db&units=metric`,
             {
                 headers: {
                     'Content-Type': 'application/json',
