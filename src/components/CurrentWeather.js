@@ -26,7 +26,7 @@ class CurrentWeather extends React.Component{
         this.calculate_avg_temp = this.calculate_avg_temp.bind(this)
         this.calculate_avg_weather_type = this.calculate_avg_weather_type.bind(this)
         this.mountCity = this.mountCity.bind(this)
-        this.handle_color = this.handle_color.bind(this)
+
     };
 
     handle_current_temp(current_weather_data){
