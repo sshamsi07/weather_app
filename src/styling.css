@@ -5,7 +5,27 @@
     border-radius: 10px;
     border: 5px solid white;
 
+}
+ul{
+    display:flex;
+    justify-content: center;
+}
 
+button{
+    flex: 1 1 auto;
+    align-self: center;
+    margin: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    border: 0;
+    background-color: #eef6fb;
+}
+
+button:focus{
+    color: lightskyblue;
+    font-family: 'Kanit';
+    font-weight: bolder;
+    font-size: 50px;
 }
 
 
