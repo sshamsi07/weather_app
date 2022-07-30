@@ -149,29 +149,15 @@ class CurrentWeather extends React.Component{
 
         return(<div className={'ui two column centered grid'}>
             <div className={'column'}>
-                <div className={'ui center aligned fluid secondary menu'}>
-                    <button className={'item'}
-                            style={{paddingLeft:'150px', paddingRight:'30px', fontSize:'35px',fontWeight:'bold', color: this.state.selected_city===city_names[0]?'lightskyblue':'black',
-                                fontFamily: this.state.selected_city === city_names[0]? 'Kanit': 'Montserrat'}}
-                            onClick={(event)=>{
-                                this.mountCity(event, city_names[0]);
-                            }}>{city_names[0]}
-
-                    </button>
-                    <button className={'item'}
-                         style={{paddingLeft:'30px', paddingRight:'30px', fontSize:'35px', fontWeight:'bold',
-                             color:this.state.selected_city===city_names[1]?'lightskyblue':'black',
-                             fontFamily: this.state.selected_city === city_names[1]? 'Kanit': 'Montserrat'}}
-                            onClick={(event)=>{
-                                this.mountCity(event, city_names[1]);
-                            }}>{city_names[1]}</button>
-
-                    <button className={'item'} style={{paddingLeft:'30px', paddingRight:'150px', fontSize:'35px', fontWeight:'bold'
-                        ,color: this.state.selected_city === city_names[2]? 'lightskyblue': 'black',
-                        fontFamily: this.state.selected_city === city_names[2]? 'Kanit': 'Montserrat'}}
-                         onClick={(event)=>
-                             this.mountCity(event, city_names[2])}>{city_names[2]}</button>
+                <div>
+                    {/*//TODO:Apply for loop for buttons*/}
+                    <ul>
+                        <button  onClick={(event)=>{this.mountCity(event, city_names[0])}}>{city_names[0]}</button>
+                        <button  onClick={(event)=>{this.mountCity(event, city_names[1])}}>{city_names[1]}</button>
+                        <button  onClick={(event)=>{this.mountCity(event, city_names[2])}}>{city_names[2]}</button>
+                    </ul>
                 </div>
+
 
                 <div className="ui-segments">
                     <div className="today-center-aligned-segment" style={{height:'380px'}} align={"center"}>
