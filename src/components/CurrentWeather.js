@@ -139,6 +139,34 @@ class CurrentWeather extends React.Component{
         return require(`../static/${weather_type}.png`)
     }
 
+    render_city_names = (city_names) =>{
+        return city_names.map((city, index)=>{
+            return(
+                <button  onClick={(event)=>
+                {this.mountCity(event, city)}}>{city}</button>
+                )
+            })
+    }
+
+    today_weather_card = () =>{
+        return(
+
+                <il className={"today_card"}>
+                    <il className={"current-weather"}>Today</il>
+                    <ul className={"today_items"}>
+                        <il className={"item"}><i id="current-icon" className={icon_file[`${this.state.current_weather_type}`]} ></i></il>
+                        <il className={"currents-details"}>
+                               <il><h1 style={{fontFamily: 'Kelly Slab', fontSize:'70px'}}>{this.state.current_temp}°</h1></il>
+                                <il style={{fontFamily: 'Montserrat', fontSize:'40px'}}>{this.state.current_weather_type}</il>
+                        </il>
+
+                       </ul>
+                </il>
+
+
+        )
+    }
+
 
     render(){
         const {current_day,
@@ -149,35 +177,15 @@ class CurrentWeather extends React.Component{
 
         return(<div className={'ui two column centered grid'}>
             <div className={'column'}>
-                <div>
-                    {/*//TODO:Apply for loop for buttons*/}
-                    <ul>
-                        <button  onClick={(event)=>{this.mountCity(event, city_names[0])}}>{city_names[0]}</button>
-                        <button  onClick={(event)=>{this.mountCity(event, city_names[1])}}>{city_names[1]}</button>
-                        <button  onClick={(event)=>{this.mountCity(event, city_names[2])}}>{city_names[2]}</button>
-                    </ul>
-                </div>
+                <ul>{this.render_city_names(city_names)}</ul>
+                     <il className={"weather_card"}>{this.today_weather_card()}
+                      <ForecastDay current_day_index={current_day-1}
+                                          days_names={days}
+                                          forecast_temp={forecast_temps}
+                                          forecast_weather={forecast_weather_types}/>
 
+                     </il>
 
-                <div className="ui-segments">
-                    <div className="today-center-aligned-segment" style={{height:'380px'}} align={"center"}>
-                            <h1 className={"current-weather"}>Today</h1>
-
-                            <div className="ui two column centered grid">
-
-                                <div className="column">
-                                    <div className={'ui center aligned secondary menu'}  style={{paddingLeft:'120px'}} >
-                                        <div className={"item"} style={{paddingTop:'50px'}}><i id="current-icon" className={icon_file[`${this.state.current_weather_type}`]} ></i></div>
-                                        <div className={"item"} style={{paddingTop:'30px'}}><h1 style={{fontFamily: 'Kelly Slab', fontSize:'70px'}}>{this.state.current_temp}°</h1></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="column">  <h2 style={{fontFamily: 'Montserrat', fontSize:'30px', paddingLeft:'210px'}}>{this.state.current_weather_type}</h2></div>
-                    </div>
-
-                    <ForecastDay
-                        current_day_index={current_day-1} days_names={days} forecast_temp={forecast_temps} forecast_weather={forecast_weather_types}/>
-                </div>
             </div>
         </div>)
     }
