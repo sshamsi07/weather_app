@@ -1,13 +1,20 @@
 
-.ui-segments{
-    width:900px;
-    background-color:#eef6fb;
-    border-radius: 10px;
-    border: 5px solid white;
+/*.column{*/
+/*    display: flex;*/
+/*    flex:auto;*/
+/*    width: 50%;*/
+/*    text-align: center;*/
+/*}*/
+
+body{
+    background-color:  #eef6fb;
+
 
 }
+
 ul{
     display:flex;
+    flex-direction: row;
     justify-content: center;
 }
 
@@ -28,21 +35,53 @@ button:focus{
     font-size: 50px;
 }
 
+.weather_card{
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    background-color: #eef6fb;
+    border-radius: 10px;
+    border: 5px solid white;
+    width:100%;
 
-.today-center-aligned-segment{
-    width:890px;
-    height:400px;
-    size: auto;
-    background-color:#eef6fb;
-    border-bottom-left-radius: 10px;
 }
 
-.ui-next-segment{
-    height:252px;
-    background-color:#eef6fb;
-    border-top: 1px solid white;
-    border-left:2px solid white;
-    border-right:2px solid white;
+.today_card{
+    display: flex;
+    flex-direction: column;
+    background-color:  #eef6fb;
+    align-items: center;
+    width:100%;
+    height:70%;
+    /*background-image: url("static/rain.gif");*/
+    /*background-repeat: no-repeat;*/
+    /*background-size:100%;*/
+    padding: 50px;
+}
+
+.today_items{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.currents-details{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: auto;
+    padding-left: 20px;
+}
+.item{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    margin: 10px;
+
+
+}
+
+h1{
+    align-content:center;
 }
 
 #current-icon{
@@ -52,11 +91,32 @@ button:focus{
 
 .current-weather{
     font-family: 'Montserrat', sans-serif;
-    padding-top: 60px;
+    padding: 30px;
     font-size: 50px;
 }
-.item{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: normal;
-    /*font-size: 100px;*/
-}
+
+
+
+/*.ui-segments{*/
+/*    width:900px;*/
+/*    background-color:#eef6fb;*/
+/*    border-radius: 10px;*/
+/*    border: 5px solid white;*/
+
+/*}*/
+
+/*.today-center-aligned-segment{*/
+/*    width:890px;*/
+/*    height:400px;*/
+/*    size: auto;*/
+/*    background-color:#eef6fb;*/
+/*    border-bottom-left-radius: 10px;*/
+/*}*/
+
+/*.ui-next-segment{*/
+/*    height:252px;*/
+/*    background-color:#eef6fb;*/
+/*    border-top: 1px solid white;*/
+/*    border-left:2px solid white;*/
+/*    border-right:2px solid white;*/
+/*}*/

@@ -19,33 +19,26 @@ class ForecastDay extends React.Component {
         let temp = this.props.forecast_temp
         let weather_type = ['', '', '', '']
         weather_type = this.props.forecast_weather
-            return (<div>
-                <div className="ui horizontal segments" style={{borderTop: '4px solid white'}}>
-                    <div className="leftsegment">
-                        <h2 className={"names"}>{this.props.days_names[(day + 1) % 7]}</h2>
+            return (
+                     <il className={"forecast_cards"}>
+                                <il className={"each_card"}>   <h2 className={"names"}>{this.props.days_names[(day + 1) % 7]}</h2>
                         <i id="icon" className={icon_file[`${weather_type[0]}`]}></i>
 
-                        <h3 className={'temp-font'}>{temp[0]}°</h3>
-
-                    </div>
-                    <div className="secondsegment">
-                        <h2 className={"names"}>{this.props.days_names[(day + 2) % 7]}</h2>
+                        <h3 className={'temp-font'}>{temp[0]}°</h3></il>
+                                <il className={"each_card"}> <h2 className={"names"}>{this.props.days_names[(day + 2) % 7]}</h2>
 
                         <i id="icon" className={icon_file[`${weather_type[1]}`]}></i>
-                        <h3 className={'temp-font'}>{temp[1]}°</h3>
-                    </div>
-                    <div className="secondsegment">
-                        <h2 className={"names"}>{this.props.days_names[(day + 3) % 7]}</h2>
+                        <h3 className={'temp-font'}>{temp[1]}°</h3></il>
+                                <il className={"each_card"}> <h2 className={"names"}>{this.props.days_names[(day + 3) % 7]}</h2>
                         <i id="icon" className={icon_file[`${weather_type[2]}`]}></i>
-                        <h3 className={'temp-font'} >{temp[2]}°</h3>
-                    </div>
-                    <div className="lastsegment">
-                        <h2 className={"names"}>{this.props.days_names[(day + 4) % 7]}</h2>
+                        <h3 className={'temp-font'} >{temp[2]}°</h3></il>
+
+                    <il className={"each_card"}>
+                            <h2 className={"names"}>{this.props.days_names[(day + 4) % 7]}</h2>
                         <i id="icon" className={icon_file[`${weather_type[3]}`]}></i>
                         <h3 className={'temp-font'} >{temp[3]}°</h3>
-                    </div>
-                </div>
-            </div>);
+                    </il> </il>
+            );
         }
 
 }
